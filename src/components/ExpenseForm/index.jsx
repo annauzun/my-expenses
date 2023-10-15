@@ -2,8 +2,8 @@ import Button from "components/Button"
 import { useState } from "react"
 
 
-const items = ['Еда', 'Аренда', 'Одежда', 'Обучение', 'Путешествия', 'Развлечения', 'Автомобиль']
-
+const unsortedItems = ['Еда', 'Аренда', 'Одежда', 'Обучение', 'Путешествия', 'Развлечения', 'Автомобиль']
+const items = unsortedItems.sort()
 const ExpenseForm = ({addExpense}) => {
 
     const [cost, setCost] = useState('')
@@ -31,7 +31,7 @@ const ExpenseForm = ({addExpense}) => {
                         onChange={(event) => setCost(event.target.value)}
                         value={cost} 
                         name="cost" 
-                        type="text" 
+                        type="number" 
                         className="col-span-2 border border-solid border-gray-400 rounded"/>
                 </div>
                 <div className="grid grid-cols-3 gap-y-4">
